@@ -1,2 +1,20 @@
-<h1>Instructors#new</h1>
-<p>Find me in app/views/instructors/new.html.erb</p>
+<h1>Create Your instructors</h1>
+<%= form_for(@instructor) do |f| %>
+<label>first_name</label><br>
+  <%= f.text_field :first_name %><br>
+  <label>second_name</label><br>
+  <%= f.text_field :last_name %><br>
+  <label>what is your age</label><br>
+
+  <%= f.number_field :age %><br>
+  <label>What is your education</label>
+  <%= f.select :education, ["Highschool Diploma", "Bachlor Degree", "Master's Degree", "Ph.D"] %> <br>
+
+  <label>Who owns this instructor?</label><br>
+<%= f.number_field :cohort_id %><br>
+
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>
