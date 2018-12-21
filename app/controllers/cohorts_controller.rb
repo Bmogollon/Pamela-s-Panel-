@@ -18,15 +18,19 @@ class CohortsController < ApplicationController
   end
 
   def index
-  end
+    @cohort = Cohort.all
 
   def edit
+      @cohort = Cohort.find(params[:id])
   end
 
+def update
+@cohort = Cohort.find(params[:id])
+end
   private
 
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date, :student_id, :instructor_id, :course_id)
+    params.require(:cohort).permit(:name, :start_date, :end_date, :instructor_id, :course_id, student_ids:[])
   end
 
 end

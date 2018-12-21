@@ -1,13 +1,42 @@
 class CoursesController < ApplicationController
   def new
-  end
+   @course = Course.new
+ end
 
-  def index
-  end
+ def create
+   @course = Course.new(course_params)
+   if @course.valid?
+     @course.save
+     redirect_to @course
+   else
+     render 'courses/new'
+   end
+ end
 
-  def show
-  end
+ def index
+   @course = Course.all
+ end
 
-  def edit
-  end
-end
+ def show
+   @course = Course.find(params[:id])
+ end
+
+ def edit
+   @course = Course.find(params[:id])
+ end
+
+ def update
+   @course = Course.find(params[:id])
+
+   if @course.update_attributes(course_params)
+     redirect_to @course
+   else
+     render 'edit'
+   end
+ end
+
+ private
+
+ def course_params
+   params.require(:course).permit(:name, :hours, :cohort_id)
+ end

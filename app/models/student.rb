@@ -3,5 +3,5 @@ class Student < ApplicationRecord
   validates :last_name, presence: true
   validates :age, presence: true
   validates :education, presence: true
-belongs_to :cohort
+belongs_to :cohort, optional:true 
 end

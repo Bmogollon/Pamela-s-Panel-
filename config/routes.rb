@@ -5,7 +5,7 @@ resources :courses
 resources :cohorts
 
 resources :instructors
-get '/register-instructor', to: 'student#new'
+get '/register-instructor', to: 'instructor#new'
 
 resources :students
 get '/register-student', to: 'student#new'

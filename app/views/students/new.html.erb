@@ -1,8 +1,8 @@
-<h1>Create Your student</h1>
+ <h1>Create Your student</h1>
 <%= form_for @student do |f| %>
-<label>first_name</label><br>
+<label>first name</label><br>
   <%= f.text_field :first_name %><br>
-  <label>second_name</label><br>
+  <label>last name</label><br>
   <%= f.text_field :last_name %><br>
   <label>what is your age</label><br>
 
@@ -11,8 +11,7 @@
 <label>What is your education</label>
 <%= f.select :education, ["Highschool Diploma", "Bachlor Degree", "Master's Degree", "Ph.D"] %> <br>
 
-  <label>Who owns this student?</label><br>
-<%= f.number_field :cohort_id %><br>
+
 
 
 <p>
