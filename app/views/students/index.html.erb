@@ -1,2 +1,21 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<h2>All Students</h2>
+<table cellspacing="20">
+  <tr>
+  <th>First Name</th>
+  <th>Last Name</th>
+
+  <th>Age</th>
+  <th>Education</th>
+  </tr>
+<% @student.each do |stud| %>
+    <tr>
+      <td><%= stud.first_name %></td>
+      <td><%= stud.last_name %></td>
+      <td><%= stud.age %></td>
+      <td><%= stud.education %></td>
+      <td><a href="/students/<%=stud.id%>">View Student</a></td>
+      <td><a href="/students/<%=stud.id%>/edit"> Edit Student </a></td>
+
+      </tr>
+    <% end %>
+</table>

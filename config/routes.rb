@@ -3,6 +3,8 @@ root 'pages#home'
 resources :courses
 
 resources :cohorts
+get '/register-cohort', to: 'cohort#new'
+get '/show', to: 'cohort#show'
 
 resources :instructors
 get '/register-instructor', to: 'instructor#new'

@@ -1,2 +1,30 @@
-<h1>Cohorts#index</h1>
-<p>Find me in app/views/cohorts/index.html.erb</p>
+<h2>All Cohorts</h2>
+<table cellspacing="30">
+  <tr>
+  <th>Name</th>
+  <th>Start Date</th>
+
+  <th>End Date</th>
+  <th>Intructors</th>
+  <th>Courses</th>
+  <th>Students</th>
+</tr>
+
+<% @cohort.each do |c| %>
+    <tr>
+      <td><%= c.name %></td>
+      <td><%= c.start_date%></td>
+      <td><%= c.end_date %></td>
+      <td><%= c.instructor.first_name %></td>
+      <td><%= c.course.name %></td>
+      <td><%c.student.each do |stud|%></td>
+      <td><%=stud.first_name%>, <%=stud.last_name%></td>
+      <%end%>
+      <td><a href="/cohorts/<%=c.id%>"> View Cohort </a></td>
+
+      <td><a href="/cohorts/<%=c.id%>/edit"> Edit cohort </a></td>
+
+
+      </tr>
+    <% end %>
+</table>

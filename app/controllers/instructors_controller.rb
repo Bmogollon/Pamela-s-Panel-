@@ -29,7 +29,7 @@ class InstructorsController < ApplicationController
   def update
   @instructor = Instructor.find(params[:id])
 
-  if @instructor.update_attributes(inst_params)
+  if @instructor.update_attributes(instructor_params)
     redirect_to @instructor
   else
     puts @instructor.errors

@@ -3,34 +3,45 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new
   end
 
-  def create
+def create
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
       redirect_to @cohort
     else
+      puts "This Erro #{@cohort.errors.messages}"
       render 'cohorts/new'
-    end
   end
+end
 
-  def show
-    @cohort = Cohort.find(params[:id])
-  end
 
   def index
     @cohort = Cohort.all
+  end
+
+    def show
+      @cohort = Cohort.find(params[:id])
+    end
 
   def edit
       @cohort = Cohort.find(params[:id])
   end
 
+
 def update
-@cohort = Cohort.find(params[:id])
+  @cohort = Cohort.find(params[:id])
+  if @cohort.update_attributes(cohort_params)
+    redirect_to '/cohorts/'
+  else
+    puts "This Error: #{@cohort.errors.messages}"
+  end
 end
-  private
+
+
+
+private
 
   def cohort_params
     params.require(:cohort).permit(:name, :start_date, :end_date, :instructor_id, :course_id, student_ids:[])
   end
-
 end

@@ -4,5 +4,5 @@ class Instructor < ApplicationRecord
   validates :age, presence: true
   validates :education, presence: true
   validates :salary, numericality: {other_than: 0}
-belongs_to :cohort, optional:true
+has_many :cohorts
 end

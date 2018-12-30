@@ -1,2 +1,19 @@
-<h1>Instructors#edit</h1>
-<p>Find me in app/views/instructors/edit.html.erb</p>
+<h2>Edit Student</h2>
+
+<%= form_for @instructor do |f| %>
+   <label>First Name</label><br>
+   <%= f.text_field :first_name %><br>
+   <label>Last Name</label><br>
+   <%= f.text_field :last_name %><br>
+   <label>Age</label><br>
+   <%= f.number_field :age %><br>
+   <label>Education</label><br>
+   <%= f.select(:education, ['', 'High School', 'College', 'Masters', 'PHD']) %>
+   <label>Salary</label><br>
+
+   <%= f.number_field :salary %><br>
+
+   <p>
+   <%= f.submit "Save Changes" %>
+   </p>
+<% end %>

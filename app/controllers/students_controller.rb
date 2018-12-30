@@ -27,14 +27,15 @@ end
   end
 
 def update
-    @student = Student.find(params[:id])
+  @student = Student.find(params[:id])
 
-    if @student.update_attributes(st_params)
-      redirect_to @student
-    else
-      puts @student.errors
-      render 'edit'
-    end
+     if @student.update_attributes(student_params)
+       redirect_to '/students/'
+     else
+       puts @student.errors
+       render 'edit'
+     end
+
 end
 
 
