@@ -1,3 +1,4 @@
+<a href="/">Home</a>
 <h2>All Cohorts</h2>
 <table cellspacing="30">
   <tr>
@@ -18,7 +19,7 @@
       <td><%= c.instructor.first_name %></td>
       <td><%= c.course.name %></td>
       <td><%c.student.each do |stud|%></td>
-      <td><%=stud.first_name%>, <%=stud.last_name%></td>
+      <td><%=stud.first_name%></td>
       <%end%>
       <td><a href="/cohorts/<%=c.id%>"> View Cohort </a></td>
 

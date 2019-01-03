@@ -38,6 +38,14 @@ def update
 
 end
 
+def destroy
+  @student = Student.find(params[:id])
+  respond_to do |format|
+    format.js
+  end
+@student.destroy
+
+end
 
   private
 

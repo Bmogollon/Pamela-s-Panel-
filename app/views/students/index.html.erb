@@ -1,3 +1,4 @@
+<a href="/">Home</a>
 <h2>All Students</h2>
 <table cellspacing="20">
   <tr>
@@ -15,7 +16,7 @@
       <td><%= stud.education %></td>
       <td><a href="/students/<%=stud.id%>">View Student</a></td>
       <td><a href="/students/<%=stud.id%>/edit"> Edit Student </a></td>
-
+<td> <%= link_to "delete student",student_path(stud.id), remote: true, method: :delete %><td>
       </tr>
     <% end %>
 </table>
