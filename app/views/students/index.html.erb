@@ -9,14 +9,14 @@
   <th>Education</th>
   </tr>
 <% @student.each do |stud| %>
-    <tr>
+    <tr id="studen-<%= stud.id %>">
       <td><%= stud.first_name %></td>
       <td><%= stud.last_name %></td>
       <td><%= stud.age %></td>
       <td><%= stud.education %></td>
       <td><a href="/students/<%=stud.id%>">View Student</a></td>
       <td><a href="/students/<%=stud.id%>/edit"> Edit Student </a></td>
-<td> <%= link_to "delete student",student_path(stud.id), remote: true, method: :delete %><td>
+<td> <%= link_to "delete student",student_path(stud.id), method: :delete, :remote => true %><td>
       </tr>
     <% end %>
 </table>

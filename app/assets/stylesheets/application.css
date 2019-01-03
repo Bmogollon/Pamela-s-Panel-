@@ -15,28 +15,25 @@
  */
 
 body{
-  background-image: linear-gradient(to right, rgb(255, 252, 170),transparent, white,lightyellow);
+  background-image: linear-gradient(to right, lightyellow,transparent, white,lightyellow);
 }
 
 
 
 .sidebar1 {
-    background: rgb(196, 210, 109);
-    /* For browsers that do not support gradients */
+    /* background: rgb(196, 210, 109); */
     background: -webkit-linear-gradient( rgba(18, 157, 194, 0.62), rgba(233, 237, 13, 0.08));
     width: 100%;
     height: auto;
-
-    position: fixed;
+    /* position: fixed; */
     z-index: 1;
-    top: 50;
+    top: 50px;
     position: fixed;
-
-
-left:12;
-    padding: 0px;
-    min-height: 100%;
+    left:62px;
+    /* padding: 0px; */
+    min-height: 80%;
     width: 150px;
+
 
 }
 .sidebar1{
@@ -44,6 +41,7 @@ left:12;
  text-decoration: none;
  font-size: 1.2em;
  display: block;
+ top:50px;
  list-style: none;
 
 }
@@ -135,9 +133,11 @@ img{
   border: 3px solid rgb(78, 88, 84);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  height: 1000px;
+  /* height: 100%; */
   position: fixed;
-  width: 100%;
+  width: 89%;
+  min-height: 80%;
+  left:62px;
 }
 
 .top {

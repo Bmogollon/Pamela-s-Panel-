@@ -40,16 +40,15 @@ end
 
 def destroy
   @student = Student.find(params[:id])
+  @student.destroy
   respond_to do |format|
     format.js
   end
-@student.destroy
-
 end
 
   private
 
   def student_params
     params.require(:student).permit(:first_name,:last_name, :age, :education, :cohort_id)
-end
+  end
 end
