@@ -9,15 +9,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
-
   <body>
+
+
+    <div id="toggle">
     <div class="container">
       <div class="top">
-        <span class="dot"></span>
-        <span class="dot2"></span>
+        <span class="dot"><span class="close">&times;</span></span>
+        <span class="dot2"><span class="close">&times;</span></span>
         <span class="dot3"></span>
-
+        <span class="middle">
+              <input type="text"size="35" value="<%= request.original_url%>">
+            </span>
       </div>
+
+
+
+
       <div class="main-container">
 
                 <div class="sidebar1">
@@ -27,7 +35,7 @@
                     <br>
                     <div class="left-navigation">
                         <ul class="list">
-                            <h3><strong>Account</strong></h3>
+                            <h3><strong>Account Settings</strong></h3>
                             <li><%= link_to "view all cohort", cohorts_path %></li>
                             <li><%= link_to "view all student", students_path %></li>
                             <li><%= link_to "view all instructor", instructors_path %></li>
@@ -47,6 +55,20 @@
   <%= yield %>
   </div>
 
+
+
+
+<script>
+
+  $('.dot').click(function() {
+    $('.main-container, .container').toggle('slow');
+  });
+
+  $('.dot2').click(function() {
+    $('.container' ).animate({top:"0px",bottom:"0px", left:"0px",width:"100%"})
+    $('.sidebar1').animate({top:"43px",bottom:"0px", left:"0px"})
+  });
+</script>
 
 
   </body>
