@@ -1,18 +1,20 @@
 <h1><%=@cohort.name%></h1>
 
-<h2>Cohort Name:</h2>  <%=@cohort.name%></><br>
-<h2>Start Date:</h2> <p><%=@cohort.start_date%></p><br>
-<h2>End Date:</h2> <p><%=@cohort.end_date%></p><br>
-<h2>Instructor:</h2> <p><%=@cohort.instructor.first_name%></p><br>
-<h2>courses:</h2> <p><%=@cohort.course.name%></p><br>
+<h3>Cohort Name:  <%=@cohort.name%></></h3><br>
+<h3>Start Date: <p><%=@cohort.start_date%></p></h3><br>
+<h3>End Date: <p><%=@cohort.end_date%></p></h3><br>
+<h3>Instructor: <p><%=@cohort.instructor.first_name%></p></h3><br>
+<h3>courses: <p><%=@cohort.course.name%></p></h3><br>
 
 
 
-<h2>Students in this Cohort:</h2><br>
+<h3>Students in this Cohort:<br>
 
   <%@cohort.student.each do |stud|%>
   <%=stud.last_name%>, <%=stud.first_name%>
   <%end%>
+  </h3>
 <br>
-
+<h3>
 <p><%= link_to "edit cohort", edit_cohort_path %></p>
+</h3>

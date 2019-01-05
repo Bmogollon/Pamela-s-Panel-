@@ -17,7 +17,7 @@
       <div class="top">
         <span class="dot"><span class="close">&times;</span></span>
         <span class="dot2"><span class="close">&times;</span></span>
-        <span class="dot3"></span>
+        <span class="dot3"><span class="close">&times;</span></span>
         <span class="middle">
               <input type="text"size="35" value="<%= request.original_url%>">
             </span>
@@ -26,50 +26,91 @@
 
 
 
-      <div class="main-container">
+      <%= render 'layouts/sidenav'%>
 
-                <div class="sidebar1">
-                    <div class="logo">
-                      <a href="/"> <img src="https://megalopolismx.com/images/opinion/autor-def.png"></a>
-                    </div>
-                    <br>
-                    <div class="left-navigation">
-                        <ul class="list">
-                            <h3><strong>Account Settings</strong></h3>
-                            <li><%= link_to "view all cohort", cohorts_path %></li>
-                            <li><%= link_to "view all student", students_path %></li>
-                            <li><%= link_to "view all instructor", instructors_path %></li>
-                            <li><%= link_to "view all course", courses_path %></li>
-                            <li><%= link_to "create cohort", new_cohort_path %></li>
-                            <li><%= link_to "create student", new_student_path %></li>
-                            <li><%= link_to "create instructor", new_instructor_path %></li>
-                            <li><%= link_to "create course", new_course_path %></li>
-
-                        </ul>
-
-
-                      </div>
-
-                    </div>
   <div class="main">
   <%= yield %>
   </div>
+</div>
+
+<footer>
+  <li style="list-style-type:none;"><a class='logout'><img src="https://img.icons8.com/ios/50/000000/shutdown.png"></a></li>
+  <div id="main-footer">
+  <div id="footer">
+  <ul class="foot">
+
+    <li>
+      <a><img src="/assets/chrome-icon.png" /></a>
+    </li>
 
 
+      <li>
+      <a><img src="/assets/linkedin-icon.png" ></a>
+    </li>
+      <li>
+      <a><img src="/assets/safari-icon.png" /></a>
+    </li>
+<li>
+<a><img src="/assets/atom.png"></a>
+</li>
+      <li>
+
+      <a><img src="/assets/linkedin-icon.png" /></a>
+    </li>
+    <li>
+      <a><img src="https://img.icons8.com/ios/50/000000/mac-os.png"></a>
+    </li>
+      <li>
+
+      <a><img src="/assets/chrome-icon.png" /></a>
+    </li>
+
+    <li>
+    <a><img src="/assets/safari-icon.png" /></a>
+  </li>
+
+<li>
+
+<a href="#" title=""><img src="/assets/linkedin-icon.png" /></a>
+</li>
+
+
+
+
+  </ul>
+    </div>
+  </div>
+
+  <li style="list-style-type:none;">
+
+    <a href="#" class="box5" style="display:none;"><img src="/assets/chrome-icon.png" /></a>
+  </li>
+
+</footer>
 
 
 <script>
 
   $('.dot').click(function() {
-    $('.main-container, .container').toggle('slow');
+    $('.container,.main-container').toggle('slow');
   });
+
 
   $('.dot2').click(function() {
-    $('.container' ).animate({top:"0px",bottom:"0px", left:"0px",width:"100%"})
-    $('.sidebar1').animate({top:"43px",bottom:"0px", left:"0px"})
+
+    $('.container' ).animate({top:"0px",bottom:"0px", left:"0px",width:"100%"});
+    $('.sidebar1').animate({top:"43px",bottom:"0px", left:"0px"});
   });
+
+
+  $('.dot3').click(function() {
+    $('.container, .main-container, .sidebar1').animate({top:$(window).height(),width:"20px"});
+    $(".box5").show(400);
+});
+
+
+
 </script>
 
-
-  </body>
+</body>
 </html>
