@@ -35,9 +35,18 @@ class CoursesController < ApplicationController
    end
  end
 
+ def destroy
+   @course = Course.find(params[:id])
+   @course.destroy
+   respond_to do |format|
+     format.js
+   end
+ end
+
+
  private
 
  def course_params
    params.require(:course).permit(:name, :hours, :cohort_id)
  end
-end 
+end

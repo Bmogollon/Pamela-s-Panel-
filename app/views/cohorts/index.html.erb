@@ -12,7 +12,7 @@
 </tr>
 
 <% @cohort.each do |c| %>
-    <tr>
+    <tr id="cohrt"-<%c.id%>">
       <td><%= c.name %></td>
       <td><%= c.start_date%></td>
       <td><%= c.end_date %></td>
@@ -22,10 +22,12 @@
       <td><%=stud.first_name%></td>
       <%end%>
       <td><a href="/cohorts/<%=c.id%>"> View Cohort </a></td>
-
+      <% if logged_in? %>
       <td><a href="/cohorts/<%=c.id%>/edit"> Edit cohort </a></td>
+      <td> <%= link_to "delete cohort",cohort_path(c.id), method: :delete, :remote => true %><td>
 
 
       </tr>
+    <% end %>
     <% end %>
 </table>

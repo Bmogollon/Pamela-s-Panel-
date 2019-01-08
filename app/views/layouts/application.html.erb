@@ -15,102 +15,50 @@
     <div id="toggle">
     <div class="container">
       <div class="top">
-        <span class="dot"><span class="close">&times;</span></span>
-        <span class="dot2"><span class="close">&times;</span></span>
-        <span class="dot3"><span class="close">&times;</span></span>
-        <span class="middle">
+        <span class="dot"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
+        <span class="middle"><img src="https://img.icons8.com/material-outlined/50/000000/home.png">
               <input type="text"size="35" value="<%= request.original_url%>">
             </span>
       </div>
 
 
-
-
       <%= render 'layouts/sidenav'%>
+
+
+
 
   <div class="main">
   <%= yield %>
-  </div>
 </div>
 
-<footer>
-  <li style="list-style-type:none;"><a class='logout'><img src="https://img.icons8.com/ios/50/000000/shutdown.png"></a></li>
-  <div id="main-footer">
-  <div id="footer">
-  <ul class="foot">
-
-    <li>
-      <a><img src="/assets/chrome-icon.png" /></a>
-    </li>
-
-
-      <li>
-      <a><img src="/assets/linkedin-icon.png" ></a>
-    </li>
-      <li>
-      <a><img src="/assets/safari-icon.png" /></a>
-    </li>
-<li>
-<a><img src="/assets/atom.png"></a>
-</li>
-      <li>
-
-      <a><img src="/assets/linkedin-icon.png" /></a>
-    </li>
-    <li>
-      <a><img src="https://img.icons8.com/ios/50/000000/mac-os.png"></a>
-    </li>
-      <li>
-
-      <a><img src="/assets/chrome-icon.png" /></a>
-    </li>
-
-    <li>
-    <a><img src="/assets/safari-icon.png" /></a>
-  </li>
-
-<li>
-
-<a href="#" title=""><img src="/assets/linkedin-icon.png" /></a>
-</li>
-
-
-
-
-  </ul>
-    </div>
-  </div>
-
-  <li style="list-style-type:none;">
-
-    <a href="#" class="box5" style="display:none;"><img src="/assets/chrome-icon.png" /></a>
-  </li>
-
-</footer>
-
+</div>
+  <%= render 'layouts/footer'%>
 
 <script>
 
   $('.dot').click(function() {
     $('.container,.main-container').toggle('slow');
+    $(".box6").show(400);
+
   });
 
 
   $('.dot2').click(function() {
 
     $('.container' ).animate({top:"0px",bottom:"0px", left:"0px",width:"100%"});
-    $('.sidebar1').animate({top:"43px",bottom:"0px", left:"0px"});
+    $('.sidebar1').animate({top:"30px",bottom:"0px", left:"0px"});
   });
 
 
   $('.dot3').click(function() {
-    $('.container, .main-container, .sidebar1').animate({top:$(window).height(),width:"20px"});
+    $('.container, .main-container, .sidebar1').animate({top:$(window).height(),width:'0px'});
     $(".box5").show(400);
 });
 
 
 
 </script>
-
 </body>
 </html>

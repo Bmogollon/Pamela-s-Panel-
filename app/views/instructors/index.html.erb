@@ -12,15 +12,19 @@
   <th>Education</th>
   </tr>
 <% @instructor.each do |instruct| %>
-    <tr>
+    <tr id="inst-<%= instruct.id %>">
       <td><%= instruct.first_name %></td>
       <td><%= instruct.last_name %></td>
       <td><%= instruct.age %></td>
         <td><%= instruct.salary %></td>
       <td><%= instruct.education %></td>
       <td><a href="/instructors/<%=instruct.id%>">View instructors</a></td>
+      <% if logged_in? %>
       <td><a href="/instructors/<%=instruct.id%>/edit"> Edit instructors </a></td>
+      <td> <%= link_to "delete instructor",instructor_path(instruct.id), method: :delete, :remote => true %><td>
+
 
       </tr>
+      <% end %>
     <% end %>
 </table>

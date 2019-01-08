@@ -9,13 +9,17 @@
 
   </tr>
 <% @course.each do |course| %>
-    <tr>
+    <tr id="cours"-<% course.id%>">
       <td><%= course.name %></td>
       <td><%= course.hours %></td>
 
       <td><a href="/courses/<%=course.id%>">View courses</a></td>
+      <% if logged_in?%>
       <td><a href="/courses/<%=course.id%>/edit"> Edit courses </a></td>
+        <td> <%= link_to "delete course",course_path(course.id), method: :delete, :remote => true %><td>
+
 
       </tr>
+      <% end %>
     <% end %>
 </table>

@@ -16,7 +16,7 @@
 
 
 body{
-background-image: linear-gradient(white, white, grey);
+background-image: url("https://i.pinimg.com/originals/50/81/a4/5081a4d154cc6578299ddf19c5676e8e.jpg");
 height: 100vh;
 margin: 0;
 }
@@ -39,29 +39,26 @@ form{
   position: fixed;
   display: inline-block;
   bottom: 0px;
+  right:0px;
   height: 120px;
-  padding: 0px 0 0px 299px;
-  text-align: center;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  width: 25%;
+  padding: 0px 400px 0px 0px;
+  width: 5%;
   line-height: 12;
   z-index: 100;
 }
-.logout{
-    position: fixed;
-    display: inline-block;
-    bottom: 0px;
-    height: 120px;
-    padding: 0px 0 0px 20px;
-    text-align: center;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    /* width: 4%; */
-    line-height: 12;
-    z-index: 100;
-  }
 
+.box5 img{
+  height: 100px;
+  width: 170px;
+  animation: bounce 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+      }
+      @keyframes bounce {
+          0%   { transform: translateY(0); }
+          50%  { transform: translateY(-100px); }
+          100% { transform: translateY(0); }
+      }
 
     .main{
       margin-left: 5%;
@@ -97,17 +94,13 @@ width: 75%;
 }
 
 .sidebar1 {
-    /* background: rgb(196, 210, 109); */
     background: -webkit-linear-gradient( rgba(18, 157, 194, 0.62), rgba(233, 237, 13, 0.08));
 
     width: 100%;
-    /* height: 100%; */
-    /* position: fixed; */
     z-index: 1;
-    top: 84px;
+    top: 57px;
     position: fixed;
-    left:62px;
-    /* padding: 0px; */
+    left:93px;
     min-height: 77%;
     width: 150px;
     padding: 15px 8px 15px 30px;
@@ -155,7 +148,6 @@ img{
 
 
 /* *********************************************** */
-
 .grid-container {
   display: grid;
   grid-row-gap: 20px;
@@ -176,31 +168,8 @@ img{
   width: 200px;
   border-radius: 40%;
 }
-
 /* ************************************8 */
 
-
-.dot {
-  height: 12px;
-  width: 12px;
-  background-color: red;
-  border-radius: 50%;
-  display: inline-block;
-}
-.dot2{
-  height: 12px;
-  width: 12px;
-  background-color: green;
-  border-radius: 100%;
-  display: inline-block;
-}
-.dot3{
-  height: 12px;
-  width: 12px;
-  background-color: yellow;
-  border-radius: 100%;
-  display: inline-block;
-}
 .container {
   border: 3px solid rgb(78, 88, 84);
   border-top-left-radius: 4px;
@@ -209,15 +178,16 @@ img{
   position: fixed;
   width: 89%;
   min-height: 80%;
-  left:62px;
-  top:40px;
+  left:90px;
+  top:27px;
+  background-image: linear-gradient(rgb(209, 215, 207), white, lightyellow);
+
 }
 
+
+
 .top {
-  padding: 10px;
-  background: #282727;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+background: -webkit-linear-gradient(rgba(233, 233, 233, 1.0), rgba(164, 164, 164, 1) 30px, #EDEDED, #EDEDED 16px)
 }
 
 .content {
@@ -226,6 +196,46 @@ img{
 }
 
 
+.dot{
+  background:red;
+  display: inline-block;
+    margin: 2px 0px 3px 1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 0px rgba(255,255,255,.5);
+    text-indent: -9999px;
+    position: relative;
+    box-shadow: red 1px solid;
+}
+.dot2{
+  background:green;
+  display: inline-block;
+    margin: 2px 0px 3px 1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 0px rgba(255,255,255,.5);
+    text-indent: -9999px;
+    position: relative;
+    box-shadow: red 1px solid;
+}
+.dot3{
+  background:yellow;
+  display: inline-block;
+    margin: 2px 0px 3px 1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 0px rgba(255,255,255,.5);
+    text-indent: -9999px;
+    position: relative;
+    box-shadow: red 1px solid;
+}
+.top img {
+  height: 23px;
+  width: 23px;
+}
 
 /* *************************************************************************** */
 
@@ -251,7 +261,7 @@ img{
 
 ul.foot {
     display: inline-block;
-    height: 130px;
+    height: 120px;
     padding: 0 40px 0 0;
       background: url("/assets/dock.png")no-repeat right bottom;
     overflow: hidden;
@@ -265,7 +275,7 @@ ul.foot li {
     float: left;
     width: 50px;
     height: 50px;
-    margin: 60px 0 4px 0;
+    margin: 55px 0 4px 0;
     -webkit-transition: 0.15s linear;
     -webkit-transition-property: -webkit-transform margin;
     text-align: center;

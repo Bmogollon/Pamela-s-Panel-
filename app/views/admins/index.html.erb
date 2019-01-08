@@ -1,0 +1,18 @@
+
+<table cellspacing="20">
+  <tr>
+  <th> Name</th>
+  <th>email</th>
+
+
+  </tr>
+<% @admin.each do |admin| %>
+    <tr>
+      <td><%= admin.name %></td>
+      <td><%= admin.email %></td>
+
+      <td><a href="/admin/<%=admin.id%>/edit"> Edit Profile </a></td>
+
+      </tr>
+    <% end %>
+</table>

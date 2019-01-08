@@ -20,3 +20,38 @@ Student.create(first_name: 'Bonny', last_name: 'Mogollon', age: 30, education: "
 Student.create(first_name: 'Breily', last_name: 'Mogollon', age: 22, education: "Ph.D")
 Student.create(first_name: 'Danny', last_name: 'Flores', age: 50, education: "Master's Degree")
 Student.create(first_name: 'Daniel', last_name: 'Conroy', age: 40, education: "Highschool Diploma")
+
+
+
+Instructor.create(first_name: 'Braccelye', last_name: 'Diaz', age: 20, education: "Highschool Diplo salary: 54054ma", salary: 54054)
+Instructor.create(first_name: 'Bonny', last_name: 'Mogollon', age: 30, education: "Master's Degree", salary:4546)
+Instructor.create(first_name: 'Breily', last_name: 'Mogollon', age: 22, education: "Ph.D", salary: 54054)
+Instructor.create(first_name: 'Danny', last_name: 'Flores', age: 50, education: "Master's Degree" ,salary: 54054)
+Instructor.create(first_name: 'Daniel', last_name: 'Conroy', age: 40, education: "Highschool Diploma" ,salary: 54054)
+Instructor.create(first_name: 'Braccelye', last_name: 'Diaz', age: 20, education: "Highschool Diploma", salary: 54054)
+Instructor.create(first_name: 'Bonny', last_name: 'Mogollon', age: 30, education: "Master's Degree", salary: 54054)
+Instructor.create(first_name: 'Breily', last_name: 'Mogollon', age: 22, education: "Ph.D", salary: 54054)
+Instructor.create(first_name: 'Danny', last_name: 'Flores', age: 50, education: "Master's Degree" ,salary: 54054)
+Instructor.create(first_name: 'Daniel', last_name: 'Conroy', age: 40, education: "Highschool Diploma", salary: 54054)
+Instructor.create(first_name: 'Braccelye', last_name: 'Diaz', age: 20, education: "Highschool Diploma", salary: 54054)
+Instructor.create(first_name: 'Bonny', last_name: 'Mogollon', age: 30, education: "Master's Degree", salary: 54054)
+Instructor.create(first_name: 'Breily', last_name: 'Mogollon', age: 22, education: "Ph.D", salary: 54054)
+Instructor.create(first_name: 'Danny', last_name: 'Flores', age: 50, education: "Master's Degree", salary: 54054)
+Instructor.create(first_name: 'Daniel', last_name: 'Conroy', age: 40, education: "Highschool Diploma", salary: 54054)
+
+
+
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'science', hours: 55)
+Course.create(name: 'gym', hours: 55)
+Course.create(name: 'art', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)
+Course.create(name: 'Math', hours: 55)

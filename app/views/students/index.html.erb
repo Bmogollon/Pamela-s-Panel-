@@ -1,4 +1,6 @@
-<a href="/">Home</a>
+
+
+
 <h2>All Students</h2>
 <table cellspacing="30">
   <tr>
@@ -8,6 +10,7 @@
   <th>Age</th>
   <th>Education</th>
   </tr>
+
 <% @student.each do |stud| %>
     <tr id="studen-<%= stud.id %>">
       <td><%= stud.first_name %></td>
@@ -15,8 +18,11 @@
       <td><%= stud.age %></td>
       <td><%= stud.education %></td>
       <td><a href="/students/<%=stud.id%>">View Student</a></td>
+      <% if logged_in? %>
       <td><a href="/students/<%=stud.id%>/edit"> Edit Student </a></td>
       <td> <%= link_to "delete student",student_path(stud.id), method: :delete, :remote => true %><td>
-    </tr>
     <% end %>
+<% end %>
+
+</tr>
 </table>

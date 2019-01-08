@@ -1,3 +1,5 @@
+<% if logged_in? %>
+
 <div class="grid-container">
 <h1>Create Course
   <div class="grid-item" > <%= link_to(image_tag("/assets/course.png"), new_course_path) %></div>
@@ -14,3 +16,66 @@
   <div class="grid-item"><%= link_to(image_tag("/assets/student.png"), new_student_path) %></div>
 </h1>
 </div>
+
+<% else %>
+
+<style >
+
+  body{
+    background: url("https://i.pinimg.com/originals/b7/f9/dc/b7f9dc994fd8d79ee6ec99794bc7c71f.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+
+  #loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid grey;
+    width: 120px;
+    height: 120px;/login
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .logo{
+    width:63px;
+      height: 0px;
+      margin:0;
+    position: relative;
+    top:45%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+  .logo img {
+    height:70px;
+    width:70px;
+  }
+</style>
+<div class="logo">
+  <%= link_to(image_tag("/assets/mac2.png"), login_path) %>
+
+</div>
+<div id="loader">
+</div>
+
+<script>
+  var delay = 1000;
+setTimeout(function(){ window.location = '/login'; }, delay);
+</script>
+<% end %>

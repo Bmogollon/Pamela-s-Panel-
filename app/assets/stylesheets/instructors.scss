@@ -1,3 +1,21 @@
 // Place all the styles related to the Instructors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+  .inst{
+  	display: block;
+  	margin:auto;
+  	padding:40px 40px 30px;
+  	border-radius:50px;
+  	border:#fff 1px solid;
+  	box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+  	text-align: center;
+    background-image: linear-gradient(lightblue, lightgrey, grey);
+    width: 290px;
+      height: 350px;
+      margin:0;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }

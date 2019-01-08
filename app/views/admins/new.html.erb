@@ -1,0 +1,99 @@
+<style>
+  body{
+    background: url("https://i.pinimg.com/originals/b7/f9/dc/b7f9dc994fd8d79ee6ec99794bc7c71f.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+
+  .login{
+    display: block;
+    margin:auto;
+    padding:40px 40px 30px;
+    /* position: absolute; */
+    border-radius:50px;
+    border:#fff 1px solid;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+    text-align: center;
+    background-image: linear-gradient(white, white, grey);
+
+    width: 290px;
+      height: 300px;
+      margin:0;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logo{
+    display:block;
+    margin:0 auto 15px;
+    width:100px;
+    height:100px;
+    border-radius:100%;login
+    border:#fff 3px solid;
+    box-shadow:rgba(0,0,0,0.4) 0px 2px 4px, inset rgba(0,0,0,0.4) 0px 3px 2px;
+    overflow:hidden;
+    background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("https://www.budget.repair/wp-content/uploads/2017/02/apple-mac-icon.png");
+    background-size: auto, 100%;
+  }
+  .user{
+    padding:10px 0;
+    font-size: 0.95em;
+    text-shadow:rgba(255,255,255,0.7) 0px 1px 0px;
+  }
+
+  .pass{
+    display: block;
+    width:170px;
+    margin:20px auto;
+    padding:10px 25px 10px 10px;
+    border-radius:3px;
+    border:#CCC 1px solid;
+  }
+  .login-form{
+    position: relative;
+  }
+  .arrow{
+    position: absolute;
+    right:10px;
+    top:8px;
+    display: block;
+    z-index:999;
+    color:#999;
+    opacity:0;
+    -webkit-transition:all 0.5s ease-in-out;
+    -moz-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
+  }
+
+
+</style>
+
+
+
+
+
+<span class="user"></span>
+<div class="login">
+
+  <div class="logo">
+  </div>
+<%= form_for @admin do |f| %>
+<label>name</label><br>
+ <%= f.text_field :name %><br>
+<label>email</label><br>
+<%= f.email_field :email %> <br>
+ <label>password</label><br>
+ <%= f.password_field :password %><br>
+
+
+<p>
+<%= f.submit %>
+</p>
+<p>Login <%= link_to "Log in now!", login_path %></p>
+<% end %>
+
+</div>
+</div>
+</div>

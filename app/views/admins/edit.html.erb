@@ -1,0 +1,14 @@
+<h2>Edit Student</h2>
+
+<% @admin.each do |admin| %>
+    <tr>
+      <td><%= admin.name %></td>
+      <td><%= admin.email %></td>
+
+
+
+
+   <p>
+   <%= f.submit "Save Changes" %>
+   </p>
+<% end %>
