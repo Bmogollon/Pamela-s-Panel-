@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+gem 'chosen-rails'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

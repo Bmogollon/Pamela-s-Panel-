@@ -16,15 +16,13 @@
 
 
   <p><%= f.label :instructor_id, "Select Instructor"%> <br>
-    <%= f.select(:instructor_id, Instructor.all.collect{ |instructor| ["#{instructor.id}, #{instructor.last_name}, #{instructor.first_name}"]
-                                                },{include_blank: true })%>
+    <%= f.select(:instructor_id, Instructor.all.collect{ |instructor| ["#{instructor.id}. #{instructor.last_name}, #{instructor.first_name}"]
+                                          }, { :multiple => true, :size => 5 }, {})%>
+
   </p>
 
   <p>
-    <%= f.collection_check_boxes :student_ids, Student.all, :id, :first_name do |student| %>
-    <%= student.check_box %>
-    <%= student.label %>
-    <%end%>
+  <%= f.collection_select :student_ids, Student.order(:first_name), :id, :first_name, {}, { multiple: true, class: 'chosen-select' } %>
   </p>
 
 <p>
