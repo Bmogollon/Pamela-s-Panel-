@@ -12,7 +12,7 @@ def create
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      redirect_to cohorts_path
+    redirect_to '/cohorts'
     else
       puts "This Erro #{@cohort.errors.messages}"
       # render 'cohorts/new'

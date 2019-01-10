@@ -6,7 +6,7 @@
     box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
     background-image: linear-gradient(white, transparent, transparent);
     width: 500px;
-      height: 350px;
+      height: 400px;
       margin:0;
     position: relative;
     top:50%;
@@ -30,21 +30,25 @@
 <div class="form">
 
 <%= form_for @instructor do |f| %>
-   <label>First Name</label><br>
+   <label>First Name:</label><br>
    <%= f.text_field :first_name %><br>
-   <label>Last Name</label><br>
+   <label>Last Name:</label><br>
    <%= f.text_field :last_name %><br>
-   <label>Age</label><br>
+   <label>Age:</label><br>
    <%= f.number_field :age %><br>
-   <label>Education</label><br>
+   <label>Education:</label><br>
    <%= f.select(:education, ['', 'High School', 'College', 'Masters', 'PHD']) %>
-   <label>Salary</label><br>
+   <label>Salary:</label><br>
 
    <%= f.number_field :salary %><br>
 
    <p>
    <%= f.submit "Save Changes" %>
    </p>
+   <div class="show">
+     <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), instructors_path) %></p>
+     <span class="show-edt">Go Back</span>
+   </div>
 <% end %>
 
 

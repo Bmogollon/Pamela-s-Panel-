@@ -13,7 +13,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(instructor_params)
     if @instructor.valid?
       @instructor.save
-      redirect_to @instructor
+      redirect_to "/instructors"
     else
       render 'instructors/new'
     end

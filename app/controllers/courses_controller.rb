@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     if @course.valid?
       @course.save
-      redirect_to @course
+      redirect_to '/courses'
     else
       render 'courses/new'
     end

@@ -1,4 +1,4 @@
-<style>
+:<style>
   .inst-new{
     display: block;
     margin:auto;
@@ -7,7 +7,7 @@
     box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
     background-image: linear-gradient(white, transparent, transparent);
     width: 700px;
-      height: 400px;
+      height: 450px;
       margin:0;
     position: relative;
     top:50%;
@@ -20,18 +20,18 @@
 
 <h4>Create Your instructors</h4>
 <%= form_for @instructor do |f| %>
-<label>first name</label><br>
+<label>first name:</label><br>
   <%= f.text_field :first_name %><br>
-  <label>last name</label><br>
+  <label>last name:</label><br>
   <%= f.text_field :last_name %><br>
-  <label>what is your age</label><br>
+  <label>what is your age:</label><br>
 
   <%= f.number_field :age %><br>
-  <label>what is your salary</label><br>
+  <label>what is your salary:</label><br>
 
   <%= f.number_field :salary %><br>
 
-  <label>What is your education</label>
+  <label>What is your education:</label>
   <%= f.select :education, ["Highschool Diploma", "Bachlor Degree", "Master's Degree", "Ph.D"] %> <br>
 
 
@@ -41,6 +41,10 @@
 <p>
 <%= f.submit %>
 </p>
+<div class="show">
+  <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), root_path) %></p>
+  <span class="show-edt">Go Back</span>
+</div>
 <% end %>
 
 </div>

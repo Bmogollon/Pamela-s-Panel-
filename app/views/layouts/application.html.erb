@@ -28,11 +28,13 @@
       <%= render 'layouts/sidenav'%>
 
 
-
-
   <div class="main">
   <%= yield %>
 </div>
+
+<% if flash[:notice] %>
+<div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 </div>
   <%= render 'layouts/footer'%>

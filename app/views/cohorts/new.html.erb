@@ -33,7 +33,7 @@ font-size:25px;
   <%= f.date_field :end_date %><br>
 
   <p><%= f.label :course_id, "Select course"%> <br>
-      <%= f.select(:course_id, Course.all.collect{ |course| ["#{course.id}, #{course.name}"]
+      <%= f.select(:course_id, Course.all.collect{ |course| ["#{course.id}. #{course.name}"]
                                                   },{include_blank: true })%>
     </p>
 
@@ -49,10 +49,14 @@ font-size:25px;
   </p>
 
   <p><%= f.file_field :avatar, direct_upload: true %></p>
-
 <p>
 <%= f.submit %>
 </p>
+<div class="show">
+  <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), root_path) %></p>
+  <span class="show-edt">Go Back</span>
+</div>
+
 <% end %>
 
 </div>

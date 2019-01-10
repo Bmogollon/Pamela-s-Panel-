@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.valid?
       @student.save
-      redirect_to @student
+      redirect_to "/students"
     else
       render 'students/new'
   end

@@ -6,11 +6,11 @@
     box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
     background-image: linear-gradient(white, transparent, transparent);
     width: 500px;
-      height: 350px;
+      height: 400px;
       margin:0;
     position: relative;
     top:50%;
-    left:55%;
+    left:54%;
     transform: translate(-50%, -50%);
   }
   .form{
@@ -47,6 +47,10 @@
    <p>
    <%= f.submit "Save Changes" %>
    </p>
+   <div class="show">
+     <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), students_path) %></p>
+     <span class="show-edt">Go Back</span>
+   </div>
 <% end %>
 </div>
 </div>

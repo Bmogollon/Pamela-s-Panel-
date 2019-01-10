@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :todos
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
    post   '/login',   to: 'sessions#create'
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
  root 'pages#home'
 
 resources :admins
-
 
 resources :courses
 
