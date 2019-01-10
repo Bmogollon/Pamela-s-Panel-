@@ -1,20 +1,19 @@
 <% if logged_in? %>
-
+<!-- <h4> DASHBOARD </h4> -->
 <div class="grid-container">
-<h1>Create Course
+<h1>Create Course  </h1>
   <div class="grid-item" > <%= link_to(image_tag("/assets/course.png"), new_course_path) %></div>
-</h1>
 
-<h1> Create Student
+
+<h1> Create Cohort  </h1>
   <div class="grid-item"><%= link_to(image_tag("/assets/cohort.png"), new_cohort_path) %></div>
-  </h1>
-  <h1> Create Instructor
-  <div class="grid-item"><%= link_to(image_tag("/assets/teacher.png"), new_instructor_path) %></div>
-  </h1>
 
-  <h1> Create Cohort
+  <h1> Create Instructor  </h1>
+  <div class="grid-item"><%= link_to(image_tag("/assets/teacher.png"), new_instructor_path) %></div>
+
+  <h1> Create Student  </h1>
   <div class="grid-item"><%= link_to(image_tag("/assets/student.png"), new_student_path) %></div>
-</h1>
+
 </div>
 
 <% else %>
@@ -25,6 +24,8 @@
     background: url("https://i.pinimg.com/originals/b7/f9/dc/b7f9dc994fd8d79ee6ec99794bc7c71f.jpg");
     background-size:cover;
     background-repeat:no-repeat;
+    zoom: 80%;
+
   }
 
   #loader {
@@ -75,7 +76,7 @@
 </div>
 
 <script>
-  var delay = 1000;
+  var delay = 2000;
 setTimeout(function(){ window.location = '/login'; }, delay);
 </script>
 <% end %>

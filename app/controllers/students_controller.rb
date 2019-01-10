@@ -1,7 +1,12 @@
 class StudentsController < ApplicationController
 
   def new
+    if logged_in?
+
     @student = Student.new
+  else
+    redirect_to root_path
+  end
   end
 
   def create
@@ -15,16 +20,29 @@ class StudentsController < ApplicationController
 end
 
   def index
+     if logged_in?
 @student = Student.all
-
+else
+  redirect_to root_path
+end
 end
 
   def show
-@student = Student.find(params[:id])
+    if logged_in?
+      @student = Student.find(params[:id])
+
+  else
+    redirect_to root_path
+  end
   end
 
   def edit
-    @student = Student.find(params[:id])
+    if logged_in?
+
+      @student = Student.find(params[:id])
+  else
+    redirect_to root_path
+  end
   end
 
 def update
@@ -50,6 +68,6 @@ end
   private
 
   def student_params
-    params.require(:student).permit(:first_name,:last_name, :age, :education, :cohort_id)
+    params.require(:student).permit(:first_name,:last_name, :age, :education, :avatar, :cohort_id)
   end
 end

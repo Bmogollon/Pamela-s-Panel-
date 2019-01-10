@@ -1,12 +1,35 @@
+<style>
+  .create{
+    display: block;
+    margin:auto;
+    border:black 1px dotted;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+    background-image: linear-gradient(white, transparent, transparent);
+    width: 650px;
+    height: 550px;
+    margin:0;
+    position: relative;
+    top:50%;
+    left:60%;
+    transform: translate(-50%, -50%);
+  }
+h4{
+text-align:center;
+font-size:25px;
+}
+</style>
+<div class="create">
 
-<h1>Create Your cohort</h1>
+<h4>Create Your cohort</h4>
+
 <%= form_for @cohort do |f| %>
-<label>name</label><br>
+<label>name:</label><br>
   <%= f.text_field :name %><br>
 
-  <label>start date</label><br>
-  <%= f.date_field :start_date %><br>
-  <label>start date</label><br>
+  <label>start date:</label><br>
+<%= f.date_field :start_date %><br>
+
+  <label>start date:</label><br>
   <%= f.date_field :end_date %><br>
 
   <p><%= f.label :course_id, "Select course"%> <br>
@@ -25,7 +48,11 @@
   <%= f.collection_select :student_ids, Student.order(:first_name), :id, :first_name, {}, { multiple: true, class: 'chosen-select' } %>
   </p>
 
+  <p><%= f.file_field :avatar, direct_upload: true %></p>
+
 <p>
 <%= f.submit %>
 </p>
 <% end %>
+
+</div>

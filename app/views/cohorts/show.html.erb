@@ -1,22 +1,57 @@
-<h1><%=@cohort.name%></h1>
+<style>
+  #st-show{
+    margin-left: 25%;
+}
 
-<h3>Cohort Name:  <%=@cohort.name%></></h3><br>
-<h3>Start Date: <p><%=@cohort.start_date%></p></h3><br>
-<h3>End Date: <p><%=@cohort.end_date%></p></h3><br>
-<h3>Instructor: <p><%=@cohort.instructor.first_name%></p></h3><br>
-<h3>courses: <p><%=@cohort.course.name%></p></h3><br>
+#st-show td{
+  border-collapse: collapse;
+  overflow: hidden;
+  background: lightgrey;
+}
+ .img-st img{
+  height:250px;
+  width:250px;
+ float: right;
+}
+h3{
+  float:right;
+
+}
+
+
+</style>
 
 
 
-<h3>Students in this Cohort:<br>
 
-  <%@cohort.student.each do |stud|%>
-  <%=stud.last_name%>, <%=stud.first_name%>
-  <%end%>
-  </h3>
-<br>
+<h2>All Students</h2>
 
-<h3>
+<table id= "st-show">
+  <h3>  <%= @cohort.name %><h3>
+  <div class="img-st">
 
-<p><%= link_to "edit cohort", edit_cohort_path %></p>
-</h3>
+    <%= image_tag(@cohort.avatar) if @cohort.avatar.attached?%>
+  </div>
+  <div class="show">
+    <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), cohorts_path) %></p>
+<span class="show-edt"> Go Back</span>
+  </div>
+
+  <tr>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Delete Student</th>
+
+</tr>
+
+
+<%@cohort.student.each do |stud|%>
+<tr>
+
+  <td>  <%=stud.first_name%></td>
+    <td>    <%=stud.last_name%></td>
+    <td><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/waste.png"),student_path(stud.id), method: :delete, :remote => true) %>
+
+<% end %>
+</tr>
+</table>

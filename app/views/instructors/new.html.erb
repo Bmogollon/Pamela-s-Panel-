@@ -1,4 +1,24 @@
-<h1>Create Your instructors</h1>
+<style>
+  .inst-new{
+    display: block;
+    margin:auto;
+
+    border:black 1px dotted;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+    background-image: linear-gradient(white, transparent, transparent);
+    width: 700px;
+      height: 400px;
+      margin:0;
+    position: relative;
+    top:50%;
+    left:60%;
+    transform: translate(-50%, -50%);
+  }
+
+</style>
+<div class="inst-new">
+
+<h4>Create Your instructors</h4>
 <%= form_for @instructor do |f| %>
 <label>first name</label><br>
   <%= f.text_field :first_name %><br>
@@ -15,9 +35,12 @@
   <%= f.select :education, ["Highschool Diploma", "Bachlor Degree", "Master's Degree", "Ph.D"] %> <br>
 
 
+  <p><%= f.file_field :avatar, direct_upload: true %></p>
 
 
 <p>
 <%= f.submit %>
 </p>
 <% end %>
+
+</div>

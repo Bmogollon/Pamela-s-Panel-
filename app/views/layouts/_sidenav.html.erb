@@ -4,13 +4,15 @@
 <% if logged_in? %>
           <div class="sidebar1">
               <div class="logo">
-                <img src="https://megalopolismx.com/images/opinion/autor-def.png">
+  <%= image_tag(current_user.avatar) if current_user.avatar.attached?%>
               </div>
               <br>
               <div class="left-navigation">
                   <ul class="list">
                       <h3><strong>Account Settings</strong></h3>
+                      <li><%= link_to "Profile", current_user %></li>
                       <li><%= link_to "Dashboard", root_path %></li>
+
                       <li><%= link_to "view all cohort", cohorts_path %></li>
                       <li><%= link_to "view all student", students_path %></li>
                       <li><%= link_to "view all instructor", instructors_path %></li>

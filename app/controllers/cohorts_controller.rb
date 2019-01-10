@@ -1,30 +1,50 @@
 class CohortsController < ApplicationController
   def new
-    @cohort = Cohort.new
+    if logged_in?
+
+      @cohort = Cohort.new
+  else
+    redirect_to root_path
+  end
   end
 
 def create
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      redirect_to @cohort
+      redirect_to cohorts_path
     else
       puts "This Erro #{@cohort.errors.messages}"
-      render 'cohorts/new'
+      # render 'cohorts/new'
   end
 end
 
 
   def index
-    @cohort = Cohort.all
+    if logged_in?
+
+      @cohort = Cohort.all
+  else
+    redirect_to root_path
+  end
   end
 
     def show
-      @cohort = Cohort.find(params[:id])
+      if logged_in?
+
+        @cohort = Cohort.find(params[:id])
+    else
+      redirect_to root_path
+    end
     end
 
   def edit
+    if logged_in?
+
       @cohort = Cohort.find(params[:id])
+  else
+    redirect_to root_path
+  end
   end
 
 
@@ -50,6 +70,6 @@ end
 private
 
   def cohort_params
-    params.require(:cohort).permit(:name, :start_date, :end_date, :instructor_id, :course_id, student_ids:[])
+    params.require(:cohort).permit(:name, :start_date, :end_date, :instructor_id, :course_id, :avatar,student_ids:[])
   end
 end

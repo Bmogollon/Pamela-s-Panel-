@@ -1,52 +1,71 @@
 class CoursesController < ApplicationController
   def new
-   @course = Course.new
- end
+    if logged_in?
+      @course = Course.new
 
- def create
-   @course = Course.new(course_params)
-   if @course.valid?
-     @course.save
-     redirect_to @course
-   else
-     render 'courses/new'
-   end
- end
+    else
+      redirect_to root_path
+    end
+  end
 
- def index
-   @course = Course.all
- end
+  def create
+    @course = Course.new(course_params)
+    if @course.valid?
+      @course.save
+      redirect_to @course
+    else
+      render 'courses/new'
+    end
+  end
 
- def show
-   @course = Course.find(params[:id])
- end
+  def index
+    if logged_in?
+      @course = Course.all
 
- def edit
-   @course = Course.find(params[:id])
- end
+    else
+      redirect_to root_path
+    end
+  end
 
- def update
-   @course = Course.find(params[:id])
+  def show
+    if logged_in?
+      @course = Course.find(params[:id])
+    else
+      redirect_to root_path
+    end
+  end
 
-   if @course.update_attributes(course_params)
-     redirect_to @course
-   else
-     render 'edit'
-   end
- end
+  def edit
+    if logged_in?
+      @course = Course.find(params[:id])
 
- def destroy
-   @course = Course.find(params[:id])
-   @course.destroy
-   respond_to do |format|
-     format.js
-   end
- end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @course = Course.find(params[:id])
+
+    if @course.update_attributes(course_params)
+      redirect_to @course
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
 
 
- private
+  private
 
- def course_params
-   params.require(:course).permit(:name, :hours, :cohort_id)
- end
+  def course_params
+    params.require(:course).permit(:name, :hours, :avatar, :cohort_id)
+  end
 end

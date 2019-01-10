@@ -1,7 +1,33 @@
-<h2>Edit cohort</h2>
+<style>
+  .edit{
+    display: block;
+    margin:auto;
+
+    border:black 1px dotted;
+    box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+    background-image: linear-gradient(white, transparent, transparent);
+    width: 800px;
+      height: 600px;
+      margin:0;
+    position: relative;
+    top:50%;
+    left:55%;
+    transform: translate(-50%, -50%);
+  }
+
+  h4{
+  text-align:center;
+  font-size:25px;
+  }
+
+</style>
+
+<div class="edit">
+
+<h4>Edit cohort</h4>
 
 <%= form_for @cohort do |f| %>
-<label>name</label><br>
+<label>name:</label><br>
   <%= f.text_field :name %><br>
 
   <label>start date</label><br>
@@ -23,14 +49,16 @@
   </p>
 
   <p>
-    <%= f.collection_check_boxes :student_ids, Student.all, :id, :first_name do |st| %>
-    <%= st.check_box %>
-    <%= st.label %>
-    <%end%>
+  <%= f.collection_select :student_ids, Student.order(:first_name), :id, :first_name, {}, { multiple: true, class: 'chosen-select' } %>
   </p>
+  <p>
+  <%= f.file_field :avatar, direct_upload: true %></p>
 
+<p>
 
 <p>
    <%= f.submit "Save Changes" %>
    </p>
 <% end %>
+
+</div>

@@ -1,50 +1,70 @@
 class AdminsController < ApplicationController
   def new
+    if logged_in?
       @admin = Admin.new
-          render :layout => false
+      render :layout => false
+
+    else
+      redirect_to root_path
+    end
   end
 
 
-def create
+  def create
     @admin = Admin.new(admin_params)
     if @admin.valid?
       @admin.save
-      redirect_to admins_path
+      log_in @admin
+      redirect_to '/admins'
     else
-      puts 'failed!!'
       render 'admin/new'
+    end
   end
-end
 
-def index
-@admin = Admin.all
-end
+  def index
+    if logged_in?
+      @admin = Admin.all
+      render :layout => false
 
-def show
-  @admin = Admin.find(params[:id])
- render :layout => false
-end
+    else
+      redirect_to root_path
+    end
+  end
+
+  def show
+    if logged_in?
+      @admin = Admin.find(params[:id])
+
+    else
+      redirect_to root_path
+    end
+  end
 
 
   def edit
-    @admin = Admin.find(params[:id])
+    if logged_in?
+      @admin = Admin.find(params[:id])
+
+    else
+      redirect_to root_path
+    end
   end
 
-def update
-  @admin = Admin.find(params[:id])
+  def update
+    @admin = Admin.find(params[:id])
 
-     if @admin.update_attributes(admin_params)
-       redirect_to '/admins/'
-     else
-       puts @student.errors
-       render 'edit'
-     end
+    if @admin.update_attributes(admin_params)
+      redirect_to @admin
+    else
+      puts @admin.errors
+      render 'edit'
+    end
 
-end
+  end
 
   private
 
   def admin_params
-    params.require(:admin).permit(:name, :email, :password, :password_confirmation)
+    params.require(:admin).permit(:name, :email, :password, :password_confirmation, :avatar)
   end
-  end
+end

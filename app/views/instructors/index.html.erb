@@ -1,8 +1,10 @@
-<a href="/">Home</a>
-
-
+<style>
+  #inst-t{
+    margin-left:-3%;
+  }
+</style>
 <h2>All Instructor</h2>
-<table cellspacing="20">
+<table id="inst-t">
   <tr>
   <th>First Name</th>
   <th>Last Name</th>
@@ -10,6 +12,9 @@
   <th>Age</th>
     <th>Salary</th>
   <th>Education</th>
+  <th>View Instructor</th>
+    <th>Edit Instructor</th>
+  <th>Delete Instructor</th>
   </tr>
 <% @instructor.each do |instruct| %>
     <tr id="inst-<%= instruct.id %>">
@@ -18,13 +23,12 @@
       <td><%= instruct.age %></td>
         <td><%= instruct.salary %></td>
       <td><%= instruct.education %></td>
-      <td><a href="/instructors/<%=instruct.id%>">View instructors</a></td>
-      <% if logged_in? %>
-      <td><a href="/instructors/<%=instruct.id%>/edit"> Edit instructors </a></td>
-      <td> <%= link_to "delete instructor",instructor_path(instruct.id), method: :delete, :remote => true %><td>
+      <td><a href="/instructors/<%=instruct.id%>"><img src="/assets/professor.png"></a></td>
+      <td><a href="/instructors/<%=instruct.id%>/edit"> <img src="/assets/pencil.png"> </a></td>
+      <td> <%= link_to(image_tag("/assets/delete.png"),instructor_path(instruct.id), method: :delete, :remote => true )%></td>
+        <td><%= image_tag(instruct.avatar) if instruct.avatar.attached?%></td>
 
 
       </tr>
       <% end %>
-    <% end %>
 </table>

@@ -1,8 +1,51 @@
-<div class="cors">
+<style>
+  .cors-grid{
+    display: grid;
+    columns-gap: 20px;
+    grid-template-columns:300px 300px ;
+    padding:10px;
+grid-column-gap: 10%;
 
-<h2>New course Added!</h2>
+      margin:0;
+    position: relative;
+    top:50%;
+    left:73%;
+    transform: translate(-50%, -50%);
+  }
+  .cors-img img{
+    float:left;
+    height:300px;
+    width:300px;
+  }
+  h2{
+    text-align:right;
+  }
+  p{
+    text-align:center;
+    font-size:20px;
+  }
+
+</style>
+
+<div class="cors-grid">
+  <h2><%= @course.name%></h2><br>
+
+<div class="cors-img">
+  <%= image_tag(@course.avatar) if @course.avatar.attached?%>
+</div>
+<div class="inst-inf">
 
 <h3>Name:  <%= @course.name %></h3><br>
 <h3>hours:  <%= @course.hours %></h3><br>
+<div class="show">
+  <%= link_to(image_tag("https://img.icons8.com/ios/50/000000/multi-edit.png"), edit_course_path) %>
+<span class="show-edt"> Edit Course</span>
+  </div>
+<div class="show">
+  <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), courses_path) %></p>
+<span class="show-edt"> Go Back</span>
+</div>
 
+
+</div>
 </div>

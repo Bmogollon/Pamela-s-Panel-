@@ -1,15 +1,47 @@
+<style>
+  .adm-grid{
+    display: grid;
+    columns-gap: 20px;
+    grid-template-columns:300px 300px ;
+    padding:10px;
+  grid-column-gap: 10%;
 
-<table cellspacing="20">
-  <tr>
-  <th> Name</th>
-  <th>email</th>
+      margin:0;
+    position: relative;
+    top:50%;
+    left:73%;
+    transform: translate(-50%, -50%);
+  }
+  .adm-img img{
+    float:left;
+    height:300px;
+    width:300px;
+  }
+  h2{
+    text-align:right;
+  }
+  p{
+    text-align:center;
+    font-size:20px;
+  }
 
 
-  </tr>
-    <tr>
-      <td><%= @admin.name %></td>
-      <td><%= @admin.email %></td>
+</style>
+<div class="adm-grid">
+  <div class="adm-img">
+    <%= image_tag(current_user.avatar) if current_user.avatar.attached?%>
 
+  </div>
+  <div class="adm-inf">
 
-      </tr>
-</table>
+  <h3>Name: <%= @admin.name %></h3> <br>
+  <h3>Email: <%= @admin.email %></h3><br>
+  <div class="show">
+    <%= link_to(image_tag("https://img.icons8.com/ios/50/000000/multi-edit.png"), edit_admin_path) %>
+    <span class="show-edt">Edit Admin</span>
+
+  </div>
+
+</div>
+
+</div>

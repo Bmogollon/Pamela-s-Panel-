@@ -1,18 +1,72 @@
-
-<table cellspacing="20">
-  <tr>
-  <th> Name</th>
-  <th>email</th>
+<footer>
 
 
-  </tr>
-<% @admin.each do |admin| %>
-    <tr>
-      <td><%= admin.name %></td>
-      <td><%= admin.email %></td>
+  <div id="main-footer">
+  <div id="footer">
+  <ul class="foot">
+<li>
+    <%= link_to(image_tag("/assets/sleep.png"), logout_path, method: :delete) %>
 
-      <td><a href="/admin/<%=admin.id%>/edit"> Edit Profile </a></td>
+</li>
+<li>
+  <a><img src="/assets/rocket.png" /></a>
+</li>
+<li>
+  <a><img src="/assets/siri.png" /></a>
+</li>
 
-      </tr>
-    <% end %>
-</table>
+
+  <li>
+  <a><img src="/assets/linkedin-icon.png" ></a>
+</li>
+<li>
+<a><img src="/assets/atom.png"></a>
+</li>
+  <li>
+
+  <a><img src="/assets/skype.png" /></a>
+</li>
+<li>
+  <a><img src="https://img.icons8.com/ios/50/000000/mac-os.png"></a>
+</li>
+<li>
+  <a><img src="/assets/safari-icon.png" /></a>
+</li>
+  <li>
+
+  <a><img src="/assets/notes.png" /></a>
+</li>
+
+<li>
+<a><img src="/assets/store.png" /></a>
+</li>
+<li>
+
+<a href="#" title=""><img src="/assets/settings.png" /></a>
+</li>
+
+
+
+
+
+<li>
+
+ <%= link_to(image_tag("/assets/chrome-icon.png"), root_path) %>
+</li>
+
+<li>
+  <a><img src="/assets/garbage.png" /></a>
+</li>
+
+  </ul>
+    </div>
+  </div>
+
+  <li style="list-style-type:none">
+
+    <a class="box5" style="display:none;"><img src="/assets/chrome-icon.png" /></a>
+  </li>
+
+</footer>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
