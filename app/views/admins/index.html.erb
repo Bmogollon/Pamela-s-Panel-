@@ -70,3 +70,20 @@
 </footer>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+      $(document).ready(function(){
+     			$("#main-footer li").each(function (type) {
+    		     	$(this).hover(function () {
+    		      		$(this).prev("li").addClass("nearby");
+    		      		$(this).next("li").addClass("nearby");
+    		     	},
+    		     	function () {
+    		      		$(this).prev("li").removeClass("nearby");
+    		      		$(this).next("li").removeClass("nearby");
+    		     	});
+    		    });
+    		});
+
+    </script>

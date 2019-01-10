@@ -5,7 +5,8 @@
   <div id="main-footer">
   <div id="footer">
   <ul class="foot">
-    <li><%= link_to(image_tag("/assets/sleep.png"), logout_path, method: :delete) %>
+    <li class="show"><%= link_to(image_tag("/assets/sleep.png"), logout_path, method: :delete) %>
+      <span class="show-edt"> Log Out</span>
 </li>
     <li>
       <a><img src="/assets/rocket.png" /></a>
@@ -63,6 +64,7 @@
   <li style="list-style-type:none">
 
     <a href="#" class="box5" style="display:none;"><img src="/assets/screen.png" /></a>
+    
   </li>
 </footer>
 
