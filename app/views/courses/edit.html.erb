@@ -35,6 +35,7 @@
  <%= f.text_field :name %><br>
  <label>hours</label><br>
  <%= f.text_field :hours %><br>
+ <p><%= f.file_field :avatar, direct_upload: true %></p>
 
    <p>
    <%= f.submit "Save Changes" %>

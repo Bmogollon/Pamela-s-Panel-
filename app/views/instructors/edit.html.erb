@@ -6,7 +6,7 @@
     box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
     background-image: linear-gradient(white, transparent, transparent);
     width: 500px;
-      height: 400px;
+      height: 460px;
       margin:0;
     position: relative;
     top:50%;
@@ -41,6 +41,7 @@
    <label>Salary:</label><br>
 
    <%= f.number_field :salary %><br>
+   <p><%= f.file_field :avatar, direct_upload: true %></p>
 
    <p>
    <%= f.submit "Save Changes" %>
