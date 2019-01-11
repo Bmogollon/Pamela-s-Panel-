@@ -35,26 +35,26 @@
 <div class="inst-grid">
   <h2><%= @instructor.first_name %>  <%= @instructor.last_name %></h2><br>
 
-<div class="inst-img">
-  <%= image_tag(@instructor.avatar) if @instructor.avatar.attached?%>
-</div>
-
-
-<div class="inst-inf">
-
-<p>First Name:<%= @instructor.first_name %></p>
-<p>Last Name:<%= @instructor.last_name %></p>
-<p>Age:<%= @instructor.age %></p>
-<p>Education:<%= @instructor.education %></p>
-<p>Salary:$<%= @instructor.salary %></p>
-<div class="show">
-  <%= link_to(image_tag("https://img.icons8.com/ios/50/000000/multi-edit.png"), edit_instructor_path) %>
-<span class="show-edt"> Edit Instructor</span>
+  <div class="inst-img">
+    <%= image_tag(@instructor.avatar) if @instructor.avatar.attached?%>
   </div>
-<div class="show">
-  <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), instructors_path) %></p>
-<span class="show-edt"> Go Back</span>
-</div>
 
-</div>
+
+  <div class="inst-inf">
+
+    <p>First Name:<%= @instructor.first_name %></p>
+    <p>Last Name:<%= @instructor.last_name %></p>
+    <p>Age:<%= @instructor.age %></p>
+    <p>Education:<%= @instructor.education %></p>
+    <p>Salary:$<%= @instructor.salary %></p>
+    <div class="show">
+      <%= link_to(image_tag("https://img.icons8.com/ios/50/000000/multi-edit.png"), edit_instructor_path) %>
+      <span class="show-edt"> Edit Instructor</span>
+    </div>
+    <div class="show">
+      <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), instructors_path) %></p>
+      <span class="show-edt"> Go Back</span>
+    </div>
+
+  </div>
 </div>

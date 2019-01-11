@@ -10,6 +10,7 @@ gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+gem 'sentry-raven'
 # Use SCSS for stylesheets
 gem 'google-cloud-storage', '~> 1.8', require: false
 

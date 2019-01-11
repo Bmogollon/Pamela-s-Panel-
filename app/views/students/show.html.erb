@@ -1,13 +1,11 @@
 <style>
   .st-grid{
     display: grid;
-    /* columns-gap: 20px; */
     grid-template-columns:300px 300px ;
     padding:10px;
-     width: 60%;
-grid-column-gap: 50px;
-
-      margin:0;
+    width: 60%;
+    grid-column-gap: 50px;
+    margin:0;
     position: relative;
     top:50%;
     left:60%;
@@ -34,25 +32,25 @@ grid-column-gap: 50px;
 <div class="st-grid">
   <h2><%= @student.first_name %>  <%= @student.last_name %></h2><br>
 
-<div class="st-img">
-  <%= image_tag(@student.avatar) if @student.avatar.attached?%>
-</div>
+  <div class="st-img">
+    <%= image_tag(@student.avatar) if @student.avatar.attached?%>
+  </div>
 
-<div class="st-inf">
+  <div class="st-inf">
 
-<p>First Name: <%= @student.first_name %></p>
-<p>Last Name: <%= @student.last_name %></p>
-<p>Age: <%= @student.age %></p>
-<p>Highest Education: <%= @student.education %></p>
-<div class="show">
-  <%= link_to(image_tag("https://img.icons8.com/ios/50/000000/multi-edit.png"), edit_student_path) %>
-<span class="show-edt"> Edit Student</span>
-</div>
-<div class="show">
-  <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), students_path) %></p>
-  <span class="show-edt">Go Back</span>
-</div>
+    <p>First Name: <%= @student.first_name %></p>
+    <p>Last Name: <%= @student.last_name %></p>
+    <p>Age: <%= @student.age %></p>
+    <p>Highest Education: <%= @student.education %></p>
+    <div class="show">
+      <%= link_to(image_tag("https://img.icons8.com/ios/50/000000/multi-edit.png"), edit_student_path) %>
+      <span class="show-edt"> Edit Student</span>
+    </div>
+    <div class="show">
+      <p><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/circled-left.png"), students_path) %></p>
+      <span class="show-edt">Go Back</span>
+    </div>
 
-</div>
+  </div>
 
 </div>

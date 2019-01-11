@@ -1,37 +1,29 @@
-
-
-
-
 <h2>All Cohorts</h2>
 <table cellspacing="20">
   <tr>
-  <th>Name</th>
-  <th>Start Date</th>
+    <th>Name</th>
+    <th>Start Date</th>
 
-  <th>End Date</th>
-  <th>Intructors</th>
-  <th>Courses</th>
-  <th>Students</th>
-  <th>Edit</th>
-  <th>Delete</th>
-</tr>
+    <th>End Date</th>
+    <th>Intructors</th>
+    <th>Courses</th>
+    <th>Students</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
 
-<% @cohort.each do |c| %>
-<tr id="cohrt-<%= c.id %>">
-      <td><%= c.name %></td>
-      <td><%= c.start_date%></td>
-      <td><%= c.end_date %></td>
-      <td><%= c.instructor.first_name %></td>
-      <td><%= c.course.name %></td>
-      <td><a href="/cohorts/<%=c.id%>"><img src="https://img.icons8.com/ios/50/000000/student-male-filled.png"> </a></td>
+  <% @cohort.each do |c| %>
+  <tr id="cohrt-<%= c.id %>">
+    <td><%= c.name %></td>
+    <td><%= c.start_date%></td>
+    <td><%= c.end_date %></td>
+    <td><%= c.instructor.first_name %></td>
+    <td><%= c.course.name %></td>
+    <td><a href="/cohorts/<%=c.id%>"><img src="https://img.icons8.com/ios/50/000000/student-male-filled.png"> </a></td>
+    <td><a href="/cohorts/<%=c.id%>/edit">  <img src="/assets/pencil.png"> </a></td>
+    <td><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/waste.png"),cohort_path(c.id), method: :delete, :remote => true) %></td>
 
-
-      <% if logged_in? %>
-      <td><a href="/cohorts/<%=c.id%>/edit">  <img src="/assets/pencil.png"> </a></td>
-        <td><%= link_to(image_tag("https://img.icons8.com/ios/50/000000/waste.png"),cohort_path(c.id), method: :delete, :remote => true) %></td>
-
-        <td>     <%= image_tag(c.avatar) if c.avatar.attached?%> </td>
-      </tr>
-    <% end %>
-    <% end %>
+    <td>     <%= image_tag(c.avatar) if c.avatar.attached?%> </td>
+  </tr>
+  <% end %>
 </table>

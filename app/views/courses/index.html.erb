@@ -1,31 +1,31 @@
 <style>
- #c-table{
+  #c-table{
     margin-left:20%;
   }
 </style>
 <h2>All Courses</h2>
 <table id="c-table">
   <tr>
-  <th> Name</th>
-  <th>Hours</th>
-  <th> View Course</th>
-  <th>Edit Course</th>
-  <th> Delete Course</th>
+    <th> Name</th>
+    <th>Hours</th>
+    <th> View Course</th>
+    <th>Edit Course</th>
+    <th> Delete Course</th>
+  </tr>
+
+  <% @course.each do |course| %>
+  <tr id="cours-<%= course.id %>">
+    <td><%= course.name %></td>
+    <td><%= course.hours %></td>
+
+    <td><a href="/courses/<%=course.id%>"><img src="/assets/language.png"></a></td>
+    <% if logged_in?%>
+    <td><a href="/courses/<%=course.id%>/edit"><img src="/assets/pencil.png"> </a></td>
+    <td> <%= link_to(image_tag("/assets/delete.png"),course_path(course.id), method: :delete, :remote => true) %></td>
+    <td><%= image_tag(course.avatar) if course.avatar.attached?%></td>
+
 
   </tr>
-<% @course.each do |course| %>
-<tr id="cours-<%= course.id %>">
-      <td><%= course.name %></td>
-      <td><%= course.hours %></td>
-
-      <td><a href="/courses/<%=course.id%>"><img src="/assets/language.png"></a></td>
-      <% if logged_in?%>
-      <td><a href="/courses/<%=course.id%>/edit"><img src="/assets/pencil.png"> </a></td>
-        <td> <%= link_to(image_tag("/assets/delete.png"),course_path(course.id), method: :delete, :remote => true) %></td>
-          <td><%= image_tag(course.avatar) if course.avatar.attached?%></td>
-
-
-      </tr>
-      <% end %>
-    <% end %>
+  <% end %>
+  <% end %>
 </table>

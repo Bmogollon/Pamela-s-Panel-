@@ -1,7 +1,7 @@
 <style>
   #stud-t{
-     margin-left:10%;
-   }
+    margin-left:10%;
+  }
 
 </style>
 
@@ -9,31 +9,31 @@
 <h2>All Students</h2>
 <table id="stud-t">
   <tr>
-  <th>First Name</th>
-  <th>Last Name</th>
+    <th>First Name</th>
+    <th>Last Name</th>
 
-  <th>Age</th>
-  <th>Education</th>
-  <th>View</th>
-  <th>Edit</th>
-  <th>Delete</th>
+    <th>Age</th>
+    <th>Education</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
 
   </tr>
 
-<% @student.each do |stud| %>
-    <tr id="studen-<%= stud.id %>">
-      <td><%= stud.first_name %></td>
-      <td><%= stud.last_name %></td>
-      <td><%= stud.age %></td>
-      <td><%= stud.education %></td>
-      <td><a href="/students/<%=stud.id%>"><img src="https://img.icons8.com/ios/50/000000/student-male-filled.png"></a></td>
-      <td><a href="/students/<%=stud.id%>/edit" > <img src="assets/pencil.png"></a></td>
+  <% @student.each do |stud| %>
+  <tr id="studen-<%= stud.id %>">
+    <td><%= stud.first_name %></td>
+    <td><%= stud.last_name %></td>
+    <td><%= stud.age %></td>
+    <td><%= stud.education %></td>
+    <td><a href="/students/<%=stud.id%>"><img src="https://img.icons8.com/ios/50/000000/student-male-filled.png"></a></td>
+    <td><a href="/students/<%=stud.id%>/edit" > <img src="assets/pencil.png"></a></td>
 
 
-      <td><%= link_to(image_tag("/assets/delete.png"),student_path(stud.id), method: :delete, :remote => true) %>
+    <td><%= link_to(image_tag("/assets/delete.png"),student_path(stud.id), method: :delete, :remote => true) %>
     </td>
     <td><%= image_tag(stud.avatar) if stud.avatar.attached?%></td>
     <% end %>
 
-</tr>
+  </tr>
 </table>
