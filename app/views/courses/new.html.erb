@@ -2,13 +2,12 @@
   .cors-new{
     display: block;
     margin:auto;
-
     border:black 1px dotted;
     box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
     background-image: linear-gradient(white, transparent, transparent);
     width: 400px;
-      height: 350px;
-      margin:0;
+    height: 350px;
+    margin:0;
     position: relative;
     top:50%;
     left:55%;
@@ -20,9 +19,9 @@
 
 <h4>Create Your course</h4>
 <%= form_for @course do |f| %>
-<label>name</label><br>
+<label>Name:</label><br>
  <%= f.text_field :name %><br>
- <label>hours</label><br>
+ <label>Hours:</label><br>
  <%= f.text_field :hours %><br>
  <p><%= f.file_field :avatar, direct_upload: true %></p>
 <p>

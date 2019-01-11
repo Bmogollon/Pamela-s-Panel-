@@ -11,16 +11,14 @@
     display: block;
     margin:auto;
     padding:40px 40px 30px;
-    /* position: absolute; */
     border-radius:50px;
     border:#fff 1px solid;
     box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
     text-align: center;
     background-image: linear-gradient(white, white, grey);
-
     width: 290px;
-      height: 327px;
-      margin:0;
+    height: 327px;
+    margin:0;
     position: relative;
     top:50%;
     left:50%;
@@ -32,7 +30,7 @@
     margin:0 auto 15px;
     width:100px;
     height:100px;
-    border-radius:100%;login
+    border-radius:100%;
     border:#fff 3px solid;
     box-shadow:rgba(0,0,0,0.4) 0px 2px 4px, inset rgba(0,0,0,0.4) 0px 3px 2px;
     overflow:hidden;
@@ -82,11 +80,11 @@
   <div class="logo">
   </div>
 <%= form_for @admin do |f| %>
-<label>name</label><br>
+<label>Name:</label><br>
  <%= f.text_field :name %><br>
-<label>email</label><br>
+<label>Email:</label><br>
 <%= f.email_field :email %> <br>
- <label>password</label><br>
+ <label>Password:</label><br>
  <%= f.password_field :password %><br>
  <p><%= f.file_field :avatar, direct_upload: true %></p>
 

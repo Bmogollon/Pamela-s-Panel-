@@ -31,9 +31,9 @@
 <div class="form">
 
 <%= form_for @course do |f| %>
-<label>name</label><br>
+<label>Name:</label><br>
  <%= f.text_field :name %><br>
- <label>hours</label><br>
+ <label>Hours:</label><br>
  <%= f.text_field :hours %><br>
  <p><%= f.file_field :avatar, direct_upload: true %></p>
 

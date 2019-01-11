@@ -20,18 +20,18 @@
 
 <h4>Create Your instructors</h4>
 <%= form_for @instructor do |f| %>
-<label>first name:</label><br>
+<label>First Name:</label><br>
   <%= f.text_field :first_name %><br>
-  <label>last name:</label><br>
+  <label>Last Name:</label><br>
   <%= f.text_field :last_name %><br>
-  <label>what is your age:</label><br>
+  <label>Age:</label><br>
 
   <%= f.number_field :age %><br>
-  <label>what is your salary:</label><br>
+  <label>Salary:</label><br>
 
   <%= f.number_field :salary %><br>
 
-  <label>What is your education:</label>
+  <label>Education:</label>
   <%= f.select :education, ["Highschool Diploma", "Bachlor Degree", "Master's Degree", "Ph.D"] %> <br>
 
 

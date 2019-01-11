@@ -23,16 +23,16 @@ font-size:25px;
 <h4>Create Your cohort</h4>
 
 <%= form_for @cohort do |f| %>
-<label>name:</label><br>
+<label>Name:</label><br>
   <%= f.text_field :name %><br>
 
-  <label>start date:</label><br>
+  <label>Start Date:</label><br>
 <%= f.date_field :start_date %><br>
 
-  <label>start date:</label><br>
+  <label>End Date:</label><br>
   <%= f.date_field :end_date %><br>
 
-  <p><%= f.label :course_id, "Select course"%> <br>
+  <p><%= f.label :course_id, "Select Course"%> <br>
       <%= f.select(:course_id, Course.all.collect{ |course| ["#{course.id}. #{course.name}"]
                                                   },{include_blank: true })%>
     </p>

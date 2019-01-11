@@ -34,13 +34,13 @@
   <div class="form">
 
     <%= form_for @student do |f| %>
-    <label>First Name</label><br>
+    <label>First Name:</label><br>
     <%= f.text_field :first_name %><br>
-    <label>Last Name</label><br>
+    <label>Last Name:</label><br>
     <%= f.text_field :last_name %><br>
-    <label>Age</label><br>
+    <label>Age:</label><br>
     <%= f.number_field :age %><br>
-    <label>Education</label><br>
+    <label>Education:</label><br>
     <%= f.select(:education, ['', 'High School', 'College', 'Masters', 'PHD']) %>
     <p><%= f.file_field :avatar, direct_upload: true %></p>
 

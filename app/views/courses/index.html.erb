@@ -19,13 +19,11 @@
     <td><%= course.hours %></td>
 
     <td><a href="/courses/<%=course.id%>"><img src="/assets/language.png"></a></td>
-    <% if logged_in?%>
     <td><a href="/courses/<%=course.id%>/edit"><img src="/assets/pencil.png"> </a></td>
     <td> <%= link_to(image_tag("/assets/delete.png"),course_path(course.id), method: :delete, :remote => true) %></td>
     <td><%= image_tag(course.avatar) if course.avatar.attached?%></td>
 
 
   </tr>
-  <% end %>
   <% end %>
 </table>
