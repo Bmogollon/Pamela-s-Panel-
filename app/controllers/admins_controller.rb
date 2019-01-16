@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
       log_in @admin
       redirect_to '/admins'
     else
-      render 'admins/new'
+      redirect_to @admins
     end
   end
 
