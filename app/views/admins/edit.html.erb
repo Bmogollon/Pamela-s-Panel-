@@ -35,7 +35,9 @@
 <label>Name:</label><br>
  <%= f.text_field :name %><br>
  <label>Email:</label><br>
- <%= f.email_field :email %><br>
+ <%= f.email_field :email %><br><br>
+<label> Change Profile Image</label>
+ <p><%= f.file_field :avatar, direct_upload: true %></p> 
 
 
    <p>
